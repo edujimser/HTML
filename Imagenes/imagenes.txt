@@ -1,0 +1,39 @@
+Actualmente existe diferentes formatos de imagenes adaptadas para el rendimiento de la páginas web. A continuación, se muestra el código para adaptarlo:
+
+Código -->
+    div class="imagen-header">
+                <picture>
+                    <source
+                    sizes="1920w"
+                    srcset="img/imgen.avif 1920w";
+                    type="image/avif"
+                    >
+
+                    <source
+                    sizes="1920w"
+                    srcset="img/imgen.webp 1920w";
+                    type="image/webp"
+                    >
+
+                    <source
+                    sizes="1920w"
+                    srcset="img/imgen.webp 1920w";
+                    type="image/webp"
+                    >
+                    
+                    <img loading="lazy" decoding="async" src="img/imagen.jpg" lazyalt="imagen" width="500" height="300">
+                </picture>
+            </div>
+
+Elementos -->
+    - picture: etiqueta principal
+    - source: archivo
+
+    - sizes: tamaños de la imagen se puede poner los diferentes tamaños
+    - srcset: ruta de la imagen y el tamaño adaptado
+    - type: declaración de imagen y formato del archivo
+
+    - loading: (lazy) inidica que se puede cargar cualquier imagen en el orden descrito en la etiqueta picture. Además, Retrasa la carga de la imagen hasta que el usuario alcanza con el scroll una distancia calculada desde el viewport.
+    - decoding: (async) decodifica la imagen de forma asincroca para reducir la demora de presentación de otro contenido, la página web carga antes de la codificación de la imagen
+    - lazyalt: etiqueta imagen
+    - width y height permite el sobretamaño de la imagen aunque despues lo modifiquemos en el CSS
